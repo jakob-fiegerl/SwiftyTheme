@@ -9,13 +9,6 @@ import SwiftUI
 
 struct FontTemplateModifier: ViewModifier {
     
-    let defaultFont: Font = Font.system(size: 12)
-    let defaultWeight: Font.Weight = .regular
-    let defaultForegroundColor: Color = .black
-    
-    let availableFonts: [FontTemplating] = [
-        FontTemplate.body
-    ]
     let template: FontTemplating
     
     init(template: FontTemplating) {
@@ -29,18 +22,14 @@ struct FontTemplateModifier: ViewModifier {
     }
     
     func getFont() -> Font {
-        return find(by: template)?.font ?? defaultFont
+        return template.font
     }
     
     func getWeight() -> Font.Weight {
-        return find(by: template)?.weight ?? defaultWeight
+        return template.weight
     }
     
     func getForegroundColor() -> Color {
-        return find(by: template)?.foregroundColor ?? defaultForegroundColor
-    }
-    
-    private func find(by template: FontTemplating) -> FontTemplating? {
-        availableFonts.filter { $0.template.id == template.template.id }.first
+        return template.foregroundColor
     }
 }

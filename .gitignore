@@ -72,4 +72,4 @@ Carthage/
 
 fastlane/report.xml
 fastlane/screenshots
-/.swiftpm
+# /.swiftpm

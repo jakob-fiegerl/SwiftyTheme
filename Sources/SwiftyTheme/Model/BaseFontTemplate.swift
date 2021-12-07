@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public class BaseFontTemplate: FontTemplating {
+open class BaseFontTemplate: FontTemplating {
     
     public var font: Font {
         get {
@@ -27,7 +27,7 @@ public class BaseFontTemplate: FontTemplating {
     
     public let template: FontTemplateModel
     
-    required init(_ template: FontTemplateModel) {
+    required public init(_ template: FontTemplateModel) {
         self.template = template
     }
     

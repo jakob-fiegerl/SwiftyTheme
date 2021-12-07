@@ -4,6 +4,8 @@ SwiftyTheme is a lightweight swift package for font templates. You can register 
 
 ## Usage
 
+Registering and using custom font templates which contain font, font-weight, foregroundColor and size is as easy as the following example:
+
 ```swift
 import SwiftUI
 
@@ -18,6 +20,13 @@ class MyFontTemplate: BaseFontTemplate {
     static let body = new(FontTemplateModel(font: Font.custom("InterV", size: 12.0),
                                                           weight: .regular,
                                                           foregroundColor: .black))
+}
+
+struct MyView: View {
+    var body: some View {
+        Text("Hello, world!")
+            .fontTemplate(MyFontTemplate.title)
+    }
 }
 
 ```

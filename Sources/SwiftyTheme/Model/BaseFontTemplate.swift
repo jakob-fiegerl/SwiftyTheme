@@ -7,31 +7,31 @@
 
 import SwiftUI
 
-public class BaseFontTemplate: FontTemplating {
+open class BaseFontTemplate: FontTemplating {
     
-    var font: Font {
+    public var font: Font {
         get {
             template.font
         }
     }
-    var weight: Font.Weight {
+    public var weight: Font.Weight {
         get {
             template.weight
         }
     }
-    var foregroundColor: Color {
+    public var foregroundColor: Color {
         get {
             template.foregroundColor
         }
     }
     
-    internal let template: FontTemplateModel
+    public let template: FontTemplateModel
     
-    required init(_ template: FontTemplateModel) {
+    required public init(_ template: FontTemplateModel) {
         self.template = template
     }
     
-    public static internal func new(_ template: FontTemplateModel) -> BaseFontTemplate {
+    public static func new(_ template: FontTemplateModel) -> BaseFontTemplate {
         self.init(template)
     }
 }

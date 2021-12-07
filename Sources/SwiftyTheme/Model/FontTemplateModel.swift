@@ -9,7 +9,7 @@ import SwiftUI
 
 public class FontTemplateModel {
     
-    internal init(font: Font, weight: Font.Weight, foregroundColor: Color) {
+    public init(font: Font, weight: Font.Weight, foregroundColor: Color) {
         self.id = UUID()
         self.font = font
         self.weight = weight

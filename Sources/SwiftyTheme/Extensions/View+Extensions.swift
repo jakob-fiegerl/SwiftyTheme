@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-    func fontTemplate(_ template: FontTemplating) -> some View {
+    public func fontTemplate(_ template: FontTemplating) -> some View {
         modifier(FontTemplateModifier(template: template))
     }
 }

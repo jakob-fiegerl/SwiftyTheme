@@ -2,6 +2,16 @@
 
 SwiftyTheme is a lightweight swift package for font templates. You can register your custom font templates and use them in a refactorsafe manner.
 
+## Features
+
+You can create custom font-templates and apply them anywhere in your app.
+
+**Font templates properties:**
+    * Font
+    * Size
+    * Weight
+    * Color
+
 ## Usage
 
 Registering and using custom font templates which contain font, font-weight, foregroundColor and size is as easy as the following example:

@@ -11,6 +11,8 @@ You can create custom font-templates and apply them anywhere in your app.
 * Size
 * Weight
 * Color
+* Italic
+* Line spacing
 
 ## Usage
 

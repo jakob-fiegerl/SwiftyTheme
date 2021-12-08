@@ -17,7 +17,7 @@ struct FontTemplateModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .font(getFont().weight(getWeight()))
+            .font(getFont().weight(getWeight()).italic(template.italic))
             .foregroundColor(getForegroundColor())
     }
     

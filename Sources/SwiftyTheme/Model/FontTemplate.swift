@@ -12,12 +12,14 @@ public class FontTemplate: FontTemplating {
     public init(font: Font,
                 weight: Font.Weight,
                 foregroundColor: Color,
-                italic: Bool = false) {
+                italic: Bool = false,
+                lineSpacing: CGFloat = 10.0) {
         self.id = UUID()
         self.font = font
         self.weight = weight
         self.foregroundColor = foregroundColor
         self.italic = italic
+        self.lineSpacing = lineSpacing
     }
     
     var id: UUID
@@ -25,4 +27,5 @@ public class FontTemplate: FontTemplating {
     public var weight: Font.Weight
     public var foregroundColor: Color
     public var italic: Bool
+    public var lineSpacing: CGFloat
 }

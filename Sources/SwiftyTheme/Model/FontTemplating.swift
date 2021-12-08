@@ -12,4 +12,5 @@ public protocol FontTemplating {
     var weight: Font.Weight { get }
     var foregroundColor: Color { get }
     var italic: Bool { get }
+    var lineSpacing: CGFloat { get }
 }

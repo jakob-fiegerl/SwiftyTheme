@@ -17,19 +17,10 @@ struct FontTemplateModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .font(getFont().weight(getWeight()).italic(template.italic))
-            .foregroundColor(getForegroundColor())
-    }
-    
-    func getFont() -> Font {
-        return template.font
-    }
-    
-    func getWeight() -> Font.Weight {
-        return template.weight
-    }
-    
-    func getForegroundColor() -> Color {
-        return template.foregroundColor
+            .font(template.font
+                    .weight(template.weight)
+                    .italic(template.italic))
+            .lineSpacing(template.lineSpacing)
+            .foregroundColor(template.foregroundColor)
     }
 }

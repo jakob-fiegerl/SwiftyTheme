@@ -20,24 +20,42 @@ Registering and using custom font templates which contain font, font-weight, for
 
 ```swift
 import SwiftUI
+import SwiftyTheme
 
-struct MyFontTemplate {
-    
-    static let title = FontTemplate(font: Font.custom("InterV", size: 18.0),
-                                    weight: .bold,
-                                    foregroundColor: .black)
-    static let heading = FontTemplate(font: Font.custom("InterV", size: 16.0),
-                                      weight: .medium,
-                                      foregroundColor: .black)
-    static let body = FontTemplate(font: Font.custom("InterV", size: 12.0),
-                                   weight: .regular,
-                                   foregroundColor: .black)
+enum AppFonts {
+	case title, heading, body
 }
+
+struct Template {
+	static func get(font: AppFonts) -> FontTemplate {
+		switch font {
+		case .title:
+			return FontTemplate(font: Font.custom("InterV", size: 18.0),
+								weight: .bold,
+								foregroundColor: .black)
+		case .heading:
+			return FontTemplate(font: Font.custom("InterV", size: 16.0),
+								weight: .medium,
+								foregroundColor: .black)
+		case .body:
+			return FontTemplate(font: Font.custom("InterV", size: 12.0),
+								weight: .regular,
+								foregroundColor: .black)
+		}
+	}
+}
+
+extension View {
+	func fontTemplate(_ template: AppFonts) -> some View {
+		self.fontTemplate(Template.get(font: template))
+	}
+}
+
 
 struct MyView: View {
     var body: some View {
         Text("Hello, world!")
-            .fontTemplate(MyFontTemplate.title)
+            .fontTemplate(.title)
     }
 }
 
